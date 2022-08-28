@@ -23,7 +23,7 @@ export async function isBroken(url) {
     try {
       statusCode = await fetchWithCache(url)
       log(`${url} returned ${statusCode}`)
-      if (statusCode !== 200 || statusCode !== 302 ) {
+      if (statusCode !== 200 || statusCode !== 302 || statusCode !== 301 ) {
         broken = true
       }
     } catch (error) {
